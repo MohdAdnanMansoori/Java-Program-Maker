@@ -4,6 +4,7 @@ public class patt
 {
     public static void main()
     {
+        patt obj=new patt();
         int i,j,rows,n,t,freq,d,a,num;
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter no. of rows: ");
@@ -42,7 +43,7 @@ public class patt
             }
         if(t==0&&freq==0)
         {
-            AllSame(rows,f[0],p);
+            obj.AllSame(rows,f[0],p);
             
         }
         else
@@ -57,11 +58,11 @@ public class patt
          }
         if(t==0)
         {
-            firstsame(rows,f,l,p);
+            obj.firstsame(rows,f,l,p);
         }
         else if(freq==0)
         {
-          lastsame(rows,f,l,p);
+          obj.lastsame(rows,f,l,p);
         }
         else
         {
@@ -78,23 +79,23 @@ public class patt
             }
           }
           if(t==0)
-           rowsame(rows,f,p);
+           obj.rowsame(rows,f,p);
          }
        }
     }
-    static void printclass()
+    void printclass()
     {
         System.out.println("public class Pattern\n{\npublic static void main()\n{\nint i,j;");
         //System.out.println("#include<stdio.h>\nvoid main()\n{\nint i,j;");
         }
-    static void printi(int s,int e,int up)
+    void printi(int s,int e,int up)
     {
         if(up>0)
         System.out.println("for(i="+s+";i<="+e+";i+="+up+")\n{");
         else
          System.out.println("for(i="+s+";i>="+e+";i-="+up*-1+")\n{");
         }
-    static void printj(int s,int e,int up)
+    void printj(int s,int e,int up)
     {
         if(up>0)
         {
@@ -115,11 +116,11 @@ public class patt
               System.out.println("for(j="+s+";j>="+e+";j-="+up*-1+")\n{");
             }
         }
-    static void printfinal(int t)
+    void printfinal(int t)
     {
         System.out.println("System.out.println(\""+t+"\");");
     }
-    static void rowsame(int rows,int f[],int p[])
+    void rowsame(int rows,int f[],int p[])
     {
         int d=(p[1]%10)-(p[0]%10);
         int a=(p[1]+"").length()-(p[0]+"").length();
@@ -134,7 +135,7 @@ public class patt
         else
         System.out.println("t-="+(d*-1)+";\n}\n}\n}");
     }
-    static void firstsame(int rows,int f[],int l[],int p[])
+    void firstsame(int rows,int f[],int l[],int p[])
     {
         int d;
         printclass();
@@ -144,7 +145,7 @@ public class patt
         System.out.println("System.out.print(j);\n}\nSystem.out.println();\n}\n}\n}");
         //System.out.println("printf(\"%d\",j);\n}\nystem.out.println();\n}\n}\n}");
     }
-    static void lastsame(int rows,int f[],int l[],int p[])
+    void lastsame(int rows,int f[],int l[],int p[])
     {
         int d;
         printclass();
@@ -153,7 +154,7 @@ public class patt
         printj(-1,l[0],d);
         System.out.println("System.out.print(j);\n}\nSystem.out.println();\n}\n}\n}");
     }
-    static void AllSame(int rows,int t,int p[])
+    void AllSame(int rows,int t,int p[])
      {
        printclass();
           int a=(p[1]+"").length()-(p[0]+"").length();
